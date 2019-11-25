@@ -10,13 +10,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 path = os.path.abspath('C:\\Users')
 pathFolders = os.listdir(path)
 for i in pathFolders:
-    if i == 'chehem':
+    if i == 'user1':
         userName = i
     elif i == 'Kevqua':
         userName = i
-    elif i == 'keleng':
+    elif i == 'user2':
         userName = i
-    elif i == 'hughes.speer':
+    elif i == 'user3':
         userName = i                                
 
 # get the dates for the files
@@ -35,11 +35,11 @@ browser.maximize_window()
 # logging in
 emailElem = browser.find_element_by_class_name("input-text.required-entry.validate-email")
 time.sleep(2)
-emailElem.send_keys('cmgreporting@concordmusicgroup.com')
+emailElem.send_keys('username')
 time.sleep(2)
 passwordElem = browser.find_element_by_class_name('input-text.required-entry.validate-password')
 time.sleep(2)
-passwordElem.send_keys('concord123')
+passwordElem.send_keys('Password')
 time.sleep(2)
 loginElem = browser.find_element_by_id('send2').click()
 time.sleep(120)
@@ -57,10 +57,10 @@ time.sleep(20)
 
 # move the files to their new folders
 # create the new monthly folder
-os.mkdir(r'\\cmgfs\Shared\Accounting\Consignment Sales\Digital\HD Tracks\2019\\' + year + '-' + '{:02d}'.format(lastMonth))
+os.mkdir(r'\\Digital\HD Tracks\2019\\' + year + '-' + '{:02d}'.format(lastMonth))
 sourcePath = os.path.abspath('C:\\Users\\' + userName + '\Downloads')
 sourceFiles = os.listdir(sourcePath)
-destinationPath = os.path.abspath(r'\\cmgfs\Shared\Accounting\Consignment Sales\Digital\HD Tracks\2019\\' + year + '-' + '{:02d}'.format(lastMonth))
+destinationPath = os.path.abspath(r'\\Digital\HD Tracks\2019\\' + year + '-' + '{:02d}'.format(lastMonth))
 
 
 
